@@ -4,146 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Fragancias</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .gradient-text {
-            background: linear-gradient(135deg, #9333ea, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=8CcUPfhHfa5wtdgbpp3d3EbT21JZ765VgOodWtRIknvHmJKu7tcC6COwsz037tTvwCnYTgGbzIH68A1fbVfg20GYc5uiEcHp1o9DdziEmHFwHxbYnLmE9OOtOpBo5fi79Js6XZFLkegQ6X5DREjAkbyNzTuR84g4BgvXD5mxQbkpDP5e72eYYcjsy9GL2CEVP0Hd7_vEpts7zKyoh1fTCK0gtivdedJ1SnSG_LhbHkUkCiB446Ld86VlRs-3vMH3sesVm4Ri9_4nY4Zb0UX6Ng" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZGlzY29yZGFwcC5jb20vYXR0YWNobWVudHMvNjY1NzQ3ODM5Mzg0ODEzNTc4LzEzODkzMTg2MDIyMjU3NTAwMTYvaW5kZXguaHRtbD9leD02ODY0MmY0NyZpcz02ODYyZGRjNyZobT1jMWRkNGU0N2YzMWY4NDYzZTg4MjhhOTcxMTYwZTc1ZmNlMGYxNzBjYjFiYzAyNTg5YTY1NmJkMmRlOGRhMTNhJg"/><script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(168, 85, 247, 0.4)' },
+                            '100%': { boxShadow: '0 0 40px rgba(168, 85, 247, 0.6)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
         }
-        
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .hover-lift {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .suggestion-item {
-            transition: all 0.15s ease;
-        }
-        
-        .suggestion-item:hover {
-            background: rgba(249, 250, 251, 0.8);
-            transform: translateX(4px);
-        }
-
-        .order-item {
-            transition: all 0.3s ease;
-        }
-
-        .order-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-    <div class="max-w-6xl mx-auto p-6">
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 text-white overflow-x-hidden">
+    <!-- Partículas flotantes -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto p-4 md:p-6 relative z-10">
         
         <!-- Panel de Cambios de Precios -->
-        <div class="mb-6">
-            <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl shadow-lg border border-amber-200">
+        <div class="mb-8">
+            <div class="glass-morphism rounded-3xl shadow-2xl border border-orange-500/30">
                 <button 
                     onclick="togglePriceChanges()" 
-                    class="w-full p-4 flex items-center justify-between text-left hover:bg-amber-50/50 rounded-2xl transition-colors"
+                    class="w-full p-6 flex items-center justify-between text-left hover:bg-orange-500/10 rounded-3xl transition-all duration-300 group"
                 >
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-amber-100 rounded-full">
-                            <svg class="h-5 w-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full border border-orange-500/30 group-hover:shadow-lg group-hover:shadow-orange-500/25 transition-all">
+                            <svg class="h-6 w-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-amber-800">Cambios de Precios Recientes</h3>
-                            <p class="text-amber-600 text-sm">5 fragancias actualizadas - Ver detalles</p>
+                            <h3 class="text-xl font-bold text-orange-300 mb-1">Cambios de Precios Recientes</h3>
+                            <p class="text-orange-400/80 text-sm">5 fragancias actualizadas - Ver detalles</p>
                         </div>
                     </div>
-                    <svg id="priceChangesArrow" class="h-5 w-5 text-amber-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg id="priceChangesArrow" class="h-6 w-6 text-orange-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 
-                <div id="priceChangesContent" class="hidden px-4 pb-4">
-                    <div class="bg-white rounded-xl p-4 border border-amber-200">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200">
-                                <div class="flex items-center gap-2">
-                                    <svg class="h-4 w-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                                    </svg>
-                                    <span class="font-medium text-gray-800">Frag Algodón</span>
+                <div id="priceChangesContent" class="hidden px-6 pb-6">
+                    <div class="glass-morphism-strong rounded-2xl p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-center justify-between p-4 bg-red-500/10 rounded-xl border border-red-500/20 hover:bg-red-500/15 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
+                                    <span class="font-medium text-gray-200">Frag Algodón</span>
                                 </div>
                                 <div class="text-right">
-                                    <div class="text-sm text-gray-500 line-through">$104.2</div>
-                                    <div class="text-sm font-bold text-red-600">↗ +$4.1</div>
+                                    <div class="text-sm text-gray-400 line-through">$104.2</div>
+                                    <div class="text-sm font-bold text-red-400">↗ +$4.1</div>
                                 </div>
                             </div>
                             
-                            <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200">
-                                <div class="flex items-center gap-2">
-                                    <svg class="h-4 w-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                                    </svg>
-                                    <span class="font-medium text-gray-800">Frag Café</span>
+                            <div class="flex items-center justify-between p-4 bg-red-500/10 rounded-xl border border-red-500/20 hover:bg-red-500/15 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
+                                    <span class="font-medium text-gray-200">Frag Café</span>
                                 </div>
                                 <div class="text-right">
-                                    <div class="text-sm text-gray-500 line-through">$145.8</div>
-                                    <div class="text-sm font-bold text-red-600">↗ +$4.2</div>
+                                    <div class="text-sm text-gray-400 line-through">$145.8</div>
+                                    <div class="text-sm font-bold text-red-400">↗ +$4.2</div>
                                 </div>
                             </div>
                             
-                            <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200">
-                                <div class="flex items-center gap-2">
-                                    <svg class="h-4 w-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                                    </svg>
-                                    <span class="font-medium text-gray-800">Frag Canela</span>
+                            <div class="flex items-center justify-between p-4 bg-red-500/10 rounded-xl border border-red-500/20 hover:bg-red-500/15 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
+                                    <span class="font-medium text-gray-200">Frag Canela</span>
                                 </div>
                                 <div class="text-right">
-                                    <div class="text-sm text-gray-500 line-through">$79.2</div>
-                                    <div class="text-sm font-bold text-red-600">↗ +$4.1</div>
+                                    <div class="text-sm text-gray-400 line-through">$79.2</div>
+                                    <div class="text-sm font-bold text-red-400">↗ +$4.1</div>
                                 </div>
                             </div>
                             
-                            <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200">
-                                <div class="flex items-center gap-2">
-                                    <svg class="h-4 w-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                                    </svg>
-                                    <span class="font-medium text-gray-800">Frag Patilla Melón</span>
+                            <div class="flex items-center justify-between p-4 bg-red-500/10 rounded-xl border border-red-500/20 hover:bg-red-500/15 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
+                                    <span class="font-medium text-gray-200">Frag Patilla Melón</span>
                                 </div>
                                 <div class="text-right">
-                                    <div class="text-sm text-gray-500 line-through">$75.2</div>
-                                    <div class="text-sm font-bold text-red-600">↗ +$4.0</div>
+                                    <div class="text-sm text-gray-400 line-through">$75.2</div>
+                                    <div class="text-sm font-bold text-red-400">↗ +$4.0</div>
                                 </div>
                             </div>
                             
-                            <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200 md:col-span-2">
-                                <div class="flex items-center gap-2">
-                                    <svg class="h-4 w-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                                    </svg>
-                                    <span class="font-medium text-gray-800">Frag Talco</span>
+                            <div class="flex items-center justify-between p-4 bg-red-500/10 rounded-xl border border-red-500/20 hover:bg-red-500/15 transition-colors md:col-span-2 lg:col-span-1">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
+                                    <span class="font-medium text-gray-200">Frag Talco</span>
                                 </div>
                                 <div class="text-right">
-                                    <div class="text-sm text-gray-500 line-through">$125.2</div>
-                                    <div class="text-sm font-bold text-red-600">↗ +$4.0</div>
+                                    <div class="text-sm text-gray-400 line-through">$125.2</div>
+                                    <div class="text-sm font-bold text-red-400">↗ +$4.0</div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
-                            <div class="flex items-center gap-2 text-amber-800">
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="mt-6 p-4 bg-orange-500/10 rounded-xl border border-orange-500/20">
+                            <div class="flex items-center gap-3 text-orange-300">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                                 <span class="text-sm font-medium">Los precios mostrados en la calculadora ya incluyen estos cambios recientes.</span>
@@ -154,164 +141,217 @@
             </div>
         </div>
         
-        <!-- Header con gradiente -->
-        <div class="text-center mb-8">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mb-4 shadow-lg">
-                <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <!-- Header con gradiente mejorado -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 rounded-full mb-6 shadow-2xl neon-border animate-pulse-slow">
+                <svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                 </svg>
             </div>
-            <h1 class="text-4xl font-bold gradient-text mb-2">
+            <h1 class="text-5xl md:text-6xl font-bold text-purple-200 mb-2 animate-float">
                 Calculadora de Fragancias
             </h1>
-           <p class="text-gray-600 text-lg">Optimiza tus cálculos de fragancias y productos químicos</p>
-            <div class="mt-3 text-sm text-gray-500 font-medium">ACTUALIZADA A 12 JUNIO 2025</div>
-            <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full mt-4"></div>
+            <p class="text-gray-300 text-xl mb-3">Optimiza tus cálculos de fragancias y productos químicos</p>
+            <div class="mt-4 text-sm text-purple-300 font-medium bg-purple-500/20 px-4 py-2 rounded-full inline-block border border-purple-500/30">
+                ACTUALIZADA A 12 JUNIO 2025
+            </div>
+            <div class="w-32 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 mx-auto rounded-full mt-6 shadow-lg shadow-purple-500/50"></div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
             
             <!-- Panel principal -->
-            <div class="space-y-6">
+            <div class="space-y-8">
                 
                 <!-- Selector de Fragancia -->
-                <div class="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 hover-lift">
-                    <div class="flex items-center gap-2 mb-4">
-                        <svg class="h-5 w-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                        </svg>
-                        <h2 class="text-lg font-semibold text-gray-800">Seleccionar Producto</h2>
+                <div class="glass-morphism rounded-3xl shadow-2xl p-8 hover-glow">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-purple-500/20 rounded-full border border-purple-500/30">
+                            <svg class="h-6 w-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-purple-300">Seleccionar Producto</h2>
                     </div>
                     
                     <div class="relative">
                         <div class="relative">
-                            <svg class="absolute left-4 top-4 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="absolute left-5 top-5 h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                             <input
                                 type="text"
                                 id="searchInput"
                                 placeholder="Buscar fragancia o producto..."
-                                class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-lg"
+                                class="w-full pl-14 pr-6 py-5 bg-gray-800/50 border-2 border-gray-600/50 rounded-2xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 text-lg text-white placeholder-gray-400 backdrop-blur-md"
                                 oninput="filterProducts()"
                                 onfocus="showSuggestions()"
                             />
                         </div>
                         
-                        <div id="suggestions" class="absolute z-20 w-full mt-2 bg-white border-2 border-gray-200 rounded-xl shadow-2xl max-h-64 overflow-y-auto hidden">
+                        <div id="suggestions" class="absolute z-20 w-full mt-3 glass-morphism-strong border-purple-500/30 rounded-2xl shadow-2xl max-h-80 overflow-y-auto hidden">
                             <!-- Las sugerencias se llenan dinámicamente -->
                         </div>
                     </div>
                     
-                    <div id="selectedProduct" class="mt-4 hidden">
+                    <div id="selectedProduct" class="mt-6 hidden">
                         <!-- El producto seleccionado se muestra aquí -->
                     </div>
                 </div>
 
                 <!-- Inputs de Cálculo -->
-                <div id="calculationSection" class="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 hover-lift hidden">
-                    <div class="flex items-center gap-2 mb-4">
-                        <svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                        </svg>
-                        <h2 class="text-lg font-semibold text-gray-800">Cálculos</h2>
+                <div id="calculationSection" class="glass-morphism rounded-3xl shadow-2xl p-8 hover-glow hidden">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-blue-500/20 rounded-full border border-blue-500/30">
+                            <svg class="h-6 w-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-blue-300">Cálculos</h2>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="relative">
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <label class="block text-sm font-bold text-gray-300 mb-3">
                                 Cantidad en Gramos
                             </label>
                             <input
                                 type="number"
                                 id="gramsInput"
                                 placeholder="0.00"
-                                class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-lg font-medium"
+                                class="w-full px-5 py-5 bg-gray-800/50 border-2 border-gray-600/50 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-lg font-medium text-white placeholder-gray-400"
                                 step="0.01"
                                 oninput="calculateFromGrams()"
                             />
-                            <div class="absolute right-4 top-12 text-gray-400 font-medium">gr</div>
+                            <div class="absolute right-5 top-14 text-gray-400 font-medium">gr</div>
                         </div>
                         
                         <div class="relative">
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <label class="block text-sm font-bold text-gray-300 mb-3">
                                 Dinero Total
                             </label>
                             <input
                                 type="number"
                                 id="moneyInput"
                                 placeholder="0.00"
-                                class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-lg font-medium"
+                                class="w-full px-5 py-5 bg-gray-800/50 border-2 border-gray-600/50 rounded-2xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 text-lg font-medium text-white placeholder-gray-400"
                                 step="0.01"
                                 oninput="calculateFromMoney()"
                             />
-                            <div class="absolute right-4 top-12 text-gray-400 font-medium">$</div>
+                            <div class="absolute right-5 top-14 text-gray-400 font-medium">$</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Opciones de Envase -->
-                <div id="containerSection" class="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 hover-lift hidden">
-                    <div class="flex items-center gap-2 mb-4">
-                        <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                        </svg>
-                        <h2 class="text-lg font-semibold text-gray-800">Opciones de Envase</h2>
+                <div id="containerSection" class="glass-morphism rounded-3xl shadow-2xl p-8 hover-glow hidden">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-green-500/20 rounded-full border border-green-500/30">
+                            <svg class="h-6 w-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-green-300">Opciones de Envase</h2>
                     </div>
                     
-                    <div class="flex items-center mb-4">
-                        <input
-                            type="checkbox"
-                            id="includeContainer"
-                            class="h-5 w-5 text-green-600 focus:ring-green-500 border-2 border-gray-300 rounded"
-                            onchange="toggleContainer()"
-                        />
-                        <label for="includeContainer" class="ml-3 text-lg font-medium text-gray-700">
-                            Incluir envase en el cálculo
-                        </label>
-                    </div>
-                    
-                    <div id="containerOptions" class="bg-green-50 p-4 rounded-xl border-2 border-green-200 hidden">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                    Tipo de Envase
-                                </label>
-                                <select
-                                    id="containerSelect"
-                                    class="w-full px-4 py-3 border-2 border-green-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg font-medium bg-white"
-                                    onchange="updateCalculation()"
+                    <div class="bg-green-500/10 p-6 rounded-2xl border border-green-500/20 mb-6">
+                        <div class="text-center mb-4">
+                            <h4 class="text-lg font-bold text-green-300 mb-2">¿Cómo incluir los envases?</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button 
+                                    id="containerModeAdd" 
+                                    onclick="setContainerMode('add')" 
+                                    class="container-mode-btn bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 px-4 py-3 rounded-lg transition-colors border border-blue-500/30 font-medium active"
                                 >
-                                    <option value="0">Atomizador 60ml - $1100</option>
-                                    <option value="1">Atomizador 120ml - $1200</option>
-                                    <option value="2">Envase 150ml - $500</option>
-                                    <option value="3">Envase 250ml - $600</option>
-                                </select>
+                                    ➕ Sumar al Total
+                                </button>
+                                <button 
+                                    id="containerModeSubtract" 
+                                    onclick="setContainerMode('subtract')" 
+                                    class="container-mode-btn bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 px-4 py-3 rounded-lg transition-colors border border-orange-500/30 font-medium"
+                                >
+                                    ➖ Restar del Total
+                                </button>
                             </div>
+                            <div id="containerModeDescription" class="text-sm text-blue-400 mt-3 font-medium">
+                                Los envases se sumarán al precio del producto
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <button class="container-button p-4 rounded-2xl text-center" onclick="selectContainer(0)">
+                            <div class="text-sm font-medium text-gray-300 mb-1">Atomizador</div>
+                            <div class="text-lg font-bold text-white">60ml</div>
+                            <div class="text-sm text-purple-400">$1100</div>
+                        </button>
+                        
+                        <button class="container-button p-4 rounded-2xl text-center" onclick="selectContainer(1)">
+                            <div class="text-sm font-medium text-gray-300 mb-1">Atomizador</div>
+                            <div class="text-lg font-bold text-white">120ml</div>
+                            <div class="text-sm text-purple-400">$1200</div>
+                        </button>
+                        
+                        <button class="container-button p-4 rounded-2xl text-center" onclick="selectContainer(2)">
+                            <div class="text-sm font-medium text-gray-300 mb-1">Envase</div>
+                            <div class="text-lg font-bold text-white">150ml</div>
+                            <div class="text-sm text-purple-400">$500</div>
+                        </button>
+                        
+                        <button class="container-button p-4 rounded-2xl text-center" onclick="selectContainer(3)">
+                            <div class="text-sm font-medium text-gray-300 mb-1">Envase</div>
+                            <div class="text-lg font-bold text-white">250ml</div>
+                            <div class="text-sm text-purple-400">$600</div>
+                        </button>
+                    </div>
+                    
+                    <div id="containerControls" class="bg-green-500/10 p-6 rounded-2xl border border-green-500/20 hidden">
+                        <div class="flex items-center justify-between mb-4">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                    Cantidad de Envases
-                                </label>
+                                <div class="font-bold text-green-300 text-lg" id="selectedContainerName">Envase Seleccionado</div>
+                                <div class="text-sm text-gray-400" id="selectedContainerPrice">Precio por unidad</div>
+                            </div>
+                            <button onclick="clearContainer()" class="text-red-400 hover:text-red-300 text-sm px-3 py-1 rounded-lg hover:bg-red-500/10 transition-colors">
+                                Quitar
+                            </button>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <label class="text-sm font-bold text-gray-300">Cantidad:</label>
+                            <div class="flex items-center gap-2">
+                                <button onclick="changeContainerQuantity(-1)" class="w-8 h-8 bg-purple-500/20 hover:bg-purple-500/30 rounded-lg flex items-center justify-center text-white transition-colors">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                                    </svg>
+                                </button>
                                 <input
                                     type="number"
                                     id="containerQuantity"
                                     min="1"
                                     value="1"
-                                    class="w-full px-4 py-3 border-2 border-green-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg font-medium"
+                                    class="w-16 px-2 py-1 bg-gray-800/50 border border-gray-600/50 rounded-lg text-center text-white"
                                     onchange="updateCalculation()"
                                 />
+                                <button onclick="changeContainerQuantity(1)" class="w-8 h-8 bg-purple-500/20 hover:bg-purple-500/30 rounded-lg flex items-center justify-center text-white transition-colors">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="text-sm text-green-400 font-medium">
+                                Total: <span id="containerTotalPrice">$0</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Botón para agregar al pedido -->
-                    <div class="mt-6 pt-4 border-t border-gray-200">
+                    <div class="mt-8 pt-6 border-t border-gray-600/30">
                         <button
                             id="addToOrderBtn"
                             onclick="addToOrder()"
-                            class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg"
+                            class="w-full bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 hover:from-purple-700 hover:via-blue-700 hover:to-purple-700 text-white font-bold py-5 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40"
                         >
-                            <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="inline-block w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                             Agregar al Pedido
@@ -321,14 +361,16 @@
             </div>
 
             <!-- Panel de Pedido Completo -->
-            <div class="space-y-6">
+            <div class="space-y-8">
                 <!-- Resumen Individual -->
-                <div id="summaryPanel" class="bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl shadow-2xl p-6 text-white hidden">
-                    <div class="flex items-center gap-2 mb-6">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                        </svg>
-                        <h3 class="text-xl font-bold">Cálculo Actual</h3>
+                <div id="summaryPanel" class="bg-gradient-to-br from-purple-600/20 via-blue-600/20 to-purple-600/20 backdrop-blur-md rounded-3xl shadow-2xl p-8 text-white border border-purple-500/30 hidden">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="p-2 bg-purple-500/30 rounded-full border border-purple-500/50">
+                            <svg class="h-6 w-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-purple-200">Cálculo Actual</h3>
                     </div>
                     
                     <div class="space-y-4" id="summaryContent">
@@ -337,37 +379,39 @@
                 </div>
 
                 <!-- Pedido Completo -->
-                <div class="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center gap-2">
-                            <svg class="h-6 w-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                            </svg>
-                            <h3 class="text-xl font-bold text-gray-800">Pedido Completo</h3>
+                <div class="glass-morphism rounded-3xl shadow-2xl p-8">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-orange-500/20 rounded-full border border-orange-500/30">
+                                <svg class="h-6 w-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-orange-300">Pedido Completo</h3>
                         </div>
                         <button
                             onclick="clearOrder()"
-                            class="text-red-600 hover:text-red-800 font-medium text-sm px-3 py-1 rounded-lg hover:bg-red-50 transition-colors"
+                            class="text-red-400 hover:text-red-300 font-medium text-sm px-4 py-2 rounded-xl hover:bg-red-500/10 transition-colors border border-red-500/30"
                         >
                             Limpiar Todo
                         </button>
                     </div>
 
-                    <div id="orderItems" class="space-y-3 mb-6">
-                        <div class="text-center text-gray-500 py-8">
-                            <svg class="h-12 w-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div id="orderItems" class="space-y-4 mb-8">
+                        <div class="text-center text-gray-400 py-12">
+                            <svg class="h-16 w-16 mx-auto mb-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                             </svg>
-                            <p>No hay productos en el pedido</p>
+                            <p class="text-lg mb-2">No hay productos en el pedido</p>
                             <p class="text-sm">Selecciona productos y agrégalos al pedido</p>
                         </div>
                     </div>
 
-                    <div id="orderTotal" class="border-t border-gray-200 pt-4 hidden">
-                        <div class="bg-gradient-to-r from-orange-100 to-red-100 p-4 rounded-xl">
+                    <div id="orderTotal" class="border-t border-gray-600/30 pt-6 hidden">
+                        <div class="bg-gradient-to-r from-orange-500/20 to-red-500/20 p-6 rounded-2xl border border-orange-500/30">
                             <div class="flex justify-between items-center">
-                                <span class="text-lg font-semibold text-gray-800">TOTAL DEL PEDIDO:</span>
-                                <span class="text-2xl font-bold text-orange-600" id="totalAmount">$0.00</span>
+                                <span class="text-xl font-bold text-gray-200">TOTAL DEL PEDIDO:</span>
+                                <span class="text-3xl font-bold text-orange-400" id="totalAmount">$0.00</span>
                             </div>
                         </div>
                     </div>
@@ -376,401 +420,6 @@
         </div>
     </div>
 
-    <script>
-        // Base de datos de productos
-        const products = [
-            // Fragancias
-            { name: "Frag Ailyn", pricePerGram: 108.3, category: "fragancia" },
-            { name: "Frag Algodón", pricePerGram: 108.3, category: "fragancia" },
-            { name: "Frag Bamboo", pricePerGram: 79.2, category: "fragancia" },
-            { name: "Frag Brisa Del Mar", pricePerGram: 100.0, category: "fragancia" },
-            { name: "Frag Brisa Del Campo", pricePerGram: 83.3, category: "fragancia" },
-            { name: "Frag Brisa Marina", pricePerGram: 141.7, category: "fragancia" },
-            { name: "Frag Café", pricePerGram: 150.0, category: "fragancia" },
-            { name: "Frag Canela", pricePerGram: 83.3, category: "fragancia" },
-            { name: "Frag Carro Nuevo", pricePerGram: 145.8, category: "fragancia" },
-            { name: "Frag Cherry (Cereza)", pricePerGram: 95.8, category: "fragancia" },
-            { name: "Frag Chicle", pricePerGram: 95.8, category: "fragancia" },
-            { name: "Frag Citronela", pricePerGram: 87.5, category: "fragancia" },
-            { name: "Frag Durazno", pricePerGram: 118.3, category: "fragancia" },
-            { name: "Frag Flor De Amoha", pricePerGram: 141.7, category: "fragancia" },
-            { name: "Frag Fresa", pricePerGram: 154.2, category: "fragancia" },
-            { name: "Frag Frutal", pricePerGram: 120.8, category: "fragancia" },
-            { name: "Frag Jardín", pricePerGram: 105.8, category: "fragancia" },
-            { name: "Frag Lavanda Fabulosa", pricePerGram: 120.8, category: "fragancia" },
-            { name: "Frag Lima Limón", pricePerGram: 133.3, category: "fragancia" },
-            { name: "Frag Limón Peel", pricePerGram: 91.7, category: "fragancia" },
-            { name: "Frag Magic Flowers", pricePerGram: 91.7, category: "fragancia" },
-            { name: "Frag Mandarina", pricePerGram: 104.2, category: "fragancia" },
-            { name: "Frag Manzana", pricePerGram: 100.0, category: "fragancia" },
-            { name: "Frag Maracuyá", pricePerGram: 150.8, category: "fragancia" },
-            { name: "Frag Patilla Melón", pricePerGram: 79.2, category: "fragancia" },
-            { name: "Frag Pino Navidad", pricePerGram: 76.7, category: "fragancia" },
-            { name: "Frag Piña", pricePerGram: 112.5, category: "fragancia" },
-            { name: "Frag Rosa", pricePerGram: 70.8, category: "fragancia" },
-            { name: "Frag Sierra Nevada", pricePerGram: 145.8, category: "fragancia" },
-            { name: "Frag Talco", pricePerGram: 129.2, category: "fragancia" },
-            { name: "Frag Uva", pricePerGram: 102.5, category: "fragancia" },
-            { name: "Frag Vainilla", pricePerGram: 79.2, category: "fragancia" },
-            // Productos químicos
-            { name: "Betaína", pricePerGram: 17.0, category: "quimico" },
-            { name: "Cocoamida", pricePerGram: 33.0, category: "quimico" },
-            { name: "Dodigen", pricePerGram: 25.0, category: "quimico" },
-            { name: "Glicerina", pricePerGram: 12.5, category: "quimico" },
-            { name: "Nonil", pricePerGram: 29.0, category: "quimico" },
-            { name: "Procide", pricePerGram: 20.0, category: "quimico" },
-            { name: "Rinsol", pricePerGram: 25.0, category: "quimico" },
-            { name: "Silicona emulsionable x gramos", pricePerGram: 36.7, category: "quimico" }
-        ];
-
-        const containers = [
-            { name: "Atomizador 60ml", price: 1100 },
-            { name: "Atomizador 120ml", price: 1200 },
-            { name: "Envase 150ml", price: 500 },
-            { name: "Envase 250ml", price: 600 }
-        ];
-
-        let selectedProduct = null;
-        let calculationType = 'grams';
-        let orderItems = [];
-        function togglePriceChanges() {
-            const content = document.getElementById('priceChangesContent');
-            const arrow = document.getElementById('priceChangesArrow');
-            
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                arrow.classList.add('rotate-180');
-            } else {
-                content.classList.add('hidden');
-                arrow.classList.remove('rotate-180');
-            }
-        }
-
-        function filterProducts() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const suggestionsDiv = document.getElementById('suggestions');
-            
-            if (searchTerm.length > 0) {
-                const filtered = products.filter(product =>
-                    product.name.toLowerCase().includes(searchTerm)
-                );
-                
-                if (filtered.length > 0) {
-                    suggestionsDiv.innerHTML = filtered.map(product => `
-                        <button onclick="selectProduct('${product.name}')" class="suggestion-item w-full px-4 py-3 text-left border-b border-gray-100 last:border-b-0 ${getCategoryClass(product.category)}">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    ${getCategoryIcon(product.category)}
-                                    <div>
-                                        <div class="font-medium text-gray-800 capitalize">${product.name}</div>
-                                        <div class="text-sm text-gray-500">$${product.pricePerGram}/gramo</div>
-                                    </div>
-                                </div>
-                                <div class="text-sm font-semibold text-gray-600">
-                                    ${product.category === 'fragancia' ? 'Fragancia' : 'Químico'}
-                                </div>
-                            </div>
-                        </button>
-                    `).join('');
-                    suggestionsDiv.classList.remove('hidden');
-                } else {
-                    suggestionsDiv.classList.add('hidden');
-                }
-            } else {
-                suggestionsDiv.classList.add('hidden');
-            }
-        }
-
-        function showSuggestions() {
-            if (document.getElementById('searchInput').value.length > 0) {
-                filterProducts();
-            }
-        }
-
-        function selectProduct(productName) {
-            selectedProduct = products.find(p => p.name === productName);
-            document.getElementById('searchInput').value = productName;
-            document.getElementById('suggestions').classList.add('hidden');
-            
-            // Mostrar producto seleccionado
-            document.getElementById('selectedProduct').innerHTML = `
-                <div class="p-4 rounded-xl border-2 ${getCategoryClass(selectedProduct.category)}">
-                    <div class="flex items-center gap-2 mb-2">
-                        ${getCategoryIcon(selectedProduct.category)}
-                        <div class="font-semibold text-gray-800 capitalize text-lg">${selectedProduct.name}</div>
-                    </div>
-                    <div class="text-2xl font-bold text-purple-600">$${selectedProduct.pricePerGram} <span class="text-sm font-normal text-gray-500">por gramo</span></div>
-                </div>
-            `;
-            document.getElementById('selectedProduct').classList.remove('hidden');
-            
-            // Mostrar secciones de cálculo
-            document.getElementById('calculationSection').classList.remove('hidden');
-            document.getElementById('containerSection').classList.remove('hidden');
-            
-            // Limpiar inputs
-            document.getElementById('gramsInput').value = '';
-            document.getElementById('moneyInput').value = '';
-            
-            updateCalculation();
-        }
-
-        function calculateFromGrams() {
-            if (!selectedProduct) return;
-            
-            calculationType = 'grams';
-            const grams = parseFloat(document.getElementById('gramsInput').value) || 0;
-            
-            if (grams > 0) {
-                const basePrice = grams * selectedProduct.pricePerGram;
-                const containerPrice = document.getElementById('includeContainer').checked ? 
-                    containers[document.getElementById('containerSelect').value].price * (parseInt(document.getElementById('containerQuantity').value) || 1) : 0;
-                const totalPrice = basePrice + containerPrice;
-                
-                document.getElementById('moneyInput').value = totalPrice.toFixed(2);
-                updateSummary(grams, totalPrice);
-            } else {
-                document.getElementById('summaryPanel').classList.add('hidden');
-            }
-        }
-
-        function calculateFromMoney() {
-            if (!selectedProduct) return;
-            
-            calculationType = 'money';
-            const totalMoney = parseFloat(document.getElementById('moneyInput').value) || 0;
-            
-            if (totalMoney > 0) {
-                const containerPrice = document.getElementById('includeContainer').checked ? 
-                    containers[document.getElementById('containerSelect').value].price * (parseInt(document.getElementById('containerQuantity').value) || 1) : 0;
-                const availableForProduct = totalMoney - containerPrice;
-                
-                if (availableForProduct > 0) {
-                    const grams = availableForProduct / selectedProduct.pricePerGram;
-                    document.getElementById('gramsInput').value = grams.toFixed(2);
-                    updateSummary(grams, totalMoney);
-                } else {
-                    document.getElementById('gramsInput').value = '0';
-                    document.getElementById('summaryPanel').classList.add('hidden');
-                }
-            } else {
-                document.getElementById('summaryPanel').classList.add('hidden');
-            }
-        }
-
-        function toggleContainer() {
-            const containerOptions = document.getElementById('containerOptions');
-            const isChecked = document.getElementById('includeContainer').checked;
-            
-            if (isChecked) {
-                containerOptions.classList.remove('hidden');
-            } else {
-                containerOptions.classList.add('hidden');
-            }
-            
-            updateCalculation();
-        }
-
-        function updateCalculation() {
-            if (calculationType === 'grams') {
-                calculateFromGrams();
-            } else {
-                calculateFromMoney();
-            }
-        }
-
-        function updateSummary(grams, totalPrice) {
-            if (!selectedProduct || grams <= 0) return;
-            
-            const containerQuantity = parseInt(document.getElementById('containerQuantity').value) || 1;
-            const containerPrice = document.getElementById('includeContainer').checked ? 
-                containers[document.getElementById('containerSelect').value].price * containerQuantity : 0;
-            const productPrice = grams * selectedProduct.pricePerGram;
-            const selectedContainer = containers[document.getElementById('containerSelect').value];
-            
-            let summaryHTML = `
-                <div class="glass-effect p-4 rounded-xl">
-                    <div class="text-sm opacity-90 mb-1">Producto</div>
-                    <div class="font-semibold text-lg capitalize">${selectedProduct.name}</div>
-                </div>
-                
-                <div class="glass-effect p-4 rounded-xl">
-                    <div class="text-sm opacity-90 mb-1">Cantidad</div>
-                    <div class="font-bold text-2xl">${grams.toFixed(2)} <span class="text-sm font-normal">gramos</span></div>
-                </div>
-                
-                <div class="glass-effect p-4 rounded-xl">
-                    <div class="text-sm opacity-90 mb-1">Precio del producto</div>
-                    <div class="font-bold text-xl">$${productPrice.toFixed(2)}</div>
-                </div>
-            `;
-            
-            if (document.getElementById('includeContainer').checked) {
-                summaryHTML += `
-                    <div class="glass-effect p-4 rounded-xl">
-                        <div class="text-sm opacity-90 mb-1">Envases</div>
-                        <div class="font-medium">${selectedContainer.name} x${containerQuantity}</div>
-                        <div class="font-bold text-lg">$${containerPrice.toFixed(2)}</div>
-                    </div>
-                `;
-            }
-            
-            summaryHTML += `
-                <div class="border-t border-white/20 pt-4">
-                    <div class="glass-effect p-4 rounded-xl">
-                        <div class="text-sm opacity-90 mb-1">TOTAL A PAGAR</div>
-                        <div class="font-bold text-3xl">${totalPrice.toFixed(2)}</div>
-                    </div>
-                </div>
-            `;
-            
-            document.getElementById('summaryContent').innerHTML = summaryHTML;
-            document.getElementById('summaryPanel').classList.remove('hidden');
-        }
-
-        function addToOrder() {
-            if (!selectedProduct) return;
-            
-            const grams = parseFloat(document.getElementById('gramsInput').value) || 0;
-            const totalPrice = parseFloat(document.getElementById('moneyInput').value) || 0;
-            
-            if (grams <= 0 || totalPrice <= 0) {
-                alert('Por favor ingresa cantidades válidas antes de agregar al pedido');
-                return;
-            }
-            
-            const containerQuantity = parseInt(document.getElementById('containerQuantity').value) || 1;
-            const includeContainer = document.getElementById('includeContainer').checked;
-            const selectedContainer = containers[document.getElementById('containerSelect').value];
-            const containerPrice = includeContainer ? selectedContainer.price * containerQuantity : 0;
-            const productPrice = grams * selectedProduct.pricePerGram;
-            
-            const orderItem = {
-                id: Date.now(),
-                product: selectedProduct,
-                grams: grams,
-                productPrice: productPrice,
-                includeContainer: includeContainer,
-                container: includeContainer ? selectedContainer : null,
-                containerQuantity: includeContainer ? containerQuantity : 0,
-                containerPrice: containerPrice,
-                totalPrice: totalPrice
-            };
-            
-            orderItems.push(orderItem);
-            updateOrderDisplay();
-            
-            // Limpiar formulario
-            clearForm();
-        }
-
-        function clearForm() {
-            document.getElementById('searchInput').value = '';
-            document.getElementById('gramsInput').value = '';
-            document.getElementById('moneyInput').value = '';
-            document.getElementById('includeContainer').checked = false;
-            document.getElementById('containerQuantity').value = '1';
-            document.getElementById('selectedProduct').classList.add('hidden');
-            document.getElementById('calculationSection').classList.add('hidden');
-            document.getElementById('containerSection').classList.add('hidden');
-            document.getElementById('summaryPanel').classList.add('hidden');
-            document.getElementById('containerOptions').classList.add('hidden');
-            selectedProduct = null;
-        }
-
-        function removeFromOrder(itemId) {
-            orderItems = orderItems.filter(item => item.id !== itemId);
-            updateOrderDisplay();
-        }
-
-        function clearOrder() {
-            orderItems = [];
-            updateOrderDisplay();
-        }
-
-        function updateOrderDisplay() {
-            const orderItemsDiv = document.getElementById('orderItems');
-            const orderTotalDiv = document.getElementById('orderTotal');
-            const totalAmountSpan = document.getElementById('totalAmount');
-            
-            if (orderItems.length === 0) {
-                orderItemsDiv.innerHTML = `
-                    <div class="text-center text-gray-500 py-8">
-                        <svg class="h-12 w-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                        </svg>
-                        <p>No hay productos en el pedido</p>
-                        <p class="text-sm">Selecciona productos y agrégalos al pedido</p>
-                    </div>
-                `;
-                orderTotalDiv.classList.add('hidden');
-                return;
-            }
-            
-            let totalOrder = 0;
-            orderItemsDiv.innerHTML = orderItems.map(item => {
-                totalOrder += item.totalPrice;
-                return `
-                    <div class="order-item bg-gray-50 p-4 rounded-xl border border-gray-200">
-                        <div class="flex justify-between items-start mb-2">
-                            <div class="flex items-center gap-2">
-                                ${getCategoryIcon(item.product.category)}
-                                <div class="font-semibold text-gray-800 capitalize">${item.product.name}</div>
-                            </div>
-                            <button 
-                                onclick="removeFromOrder(${item.id})"
-                                class="text-red-500 hover:text-red-700 p-1 rounded-full hover:bg-red-50 transition-colors"
-                            >
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        
-                        <div class="grid grid-cols-2 gap-2 text-sm text-gray-600 mb-2">
-                            <div>Cantidad: <span class="font-medium">${item.grams.toFixed(2)}g</span></div>
-                            <div>Producto: <span class="font-medium">${item.productPrice.toFixed(2)}</span></div>
-                        </div>
-                        
-                        ${item.includeContainer ? `
-                            <div class="text-sm text-gray-600 mb-2">
-                                Envases: <span class="font-medium">${item.container.name} x${item.containerQuantity} - ${item.containerPrice.toFixed(2)}</span>
-                            </div>
-                        ` : ''}
-                        
-                        <div class="text-right">
-                            <span class="text-lg font-bold text-orange-600">${item.totalPrice.toFixed(2)}</span>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-            
-            totalAmountSpan.textContent = `${totalOrder.toFixed(2)}`;
-            orderTotalDiv.classList.remove('hidden');
-        }
-
-        function getCategoryIcon(category) {
-            if (category === 'fragancia') {
-                return '<svg class="h-4 w-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>';
-            } else {
-                return '<svg class="h-4 w-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>';
-            }
-        }
-
-        function getCategoryClass(category) {
-            if (category === 'fragancia') {
-                return 'bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200';
-            } else {
-                return 'bg-gradient-to-r from-blue-50 to-cyan-50 border-blue-200';
-            }
-        }
-
-        // Ocultar sugerencias cuando se hace clic fuera
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('#searchInput') && !event.target.closest('#suggestions')) {
-                document.getElementById('suggestions').classList.add('hidden');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
