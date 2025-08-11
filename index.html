@@ -46,7 +46,7 @@
 
     <div class="max-w-7xl mx-auto p-4 md:p-6 relative z-10">
         
-       <!-- Panel de Cambios de Precios -->
+      <!-- Panel de Cambios de Precios -->
 <div class="mb-8">
     <div class="glass-morphism rounded-3xl shadow-2xl border border-orange-500/30">
         <button 
@@ -61,7 +61,7 @@
                 </div>
                 <div>
                     <h3 class="text-xl font-bold text-orange-300 mb-1">Cambios de Precios Recientes</h3>
-                    <p class="text-orange-400/80 text-sm">6 productos actualizados - Ver detalles</p>
+                    <p class="text-orange-400/80 text-sm">24 productos actualizados - Ver detalles</p>
                 </div>
             </div>
             <svg id="priceChangesArrow" class="h-6 w-6 text-orange-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,88 +71,218 @@
         
         <div id="priceChangesContent" class="hidden px-6 pb-6">
             <div class="glass-morphism-strong rounded-2xl p-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    
-                    <!-- Fragancia Cherry - REDUCCIÓN -->
-                    <div class="flex items-center justify-between p-4 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                            <span class="font-medium text-gray-200">Frag Cherry</span>
+                
+                <!-- Productos con Cambios Más Significativos -->
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold text-orange-200 mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                        Cambios Críticos (>$10)
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <!-- Fragancia Vainilla - AUMENTO CRÍTICO -->
+                        <div class="flex items-center justify-between p-4 bg-red-600/15 rounded-xl border-2 border-red-500/40 hover:bg-red-600/20 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 bg-red-500 rounded-full animate-pulse shadow-lg shadow-red-500/50"></div>
+                                <span class="font-bold text-gray-100">Frag Vainilla</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-400 line-through">79.20 $/gr</div>
+                                <div class="text-lg font-bold text-red-400">↗ +33.43 $/gr</div>
+                            </div>
                         </div>
-                        <div class="text-right">
-                            <div class="text-sm text-gray-400 line-through">93.93 $/gr</div>
-                            <div class="text-sm font-bold text-green-400">↘ -8.50 $/gr</div>
+                        
+                        <!-- Fragancia Cherry - REDUCCIÓN CRÍTICA -->
+                        <div class="flex items-center justify-between p-4 bg-green-600/15 rounded-xl border-2 border-green-500/40 hover:bg-green-600/20 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
+                                <span class="font-bold text-gray-100">Frag Cherry</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-400 line-through">95.80 $/gr</div>
+                                <div class="text-lg font-bold text-green-400">↘ -10.37 $/gr</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Productos con Cambios Significativos -->
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold text-orange-200 mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+                        Cambios Significativos ($5-$10)
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        
+                        <!-- Silicona Emulsionable -->
+                        <div class="flex items-center justify-between p-4 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                                <span class="font-medium text-gray-200">Silicona Emuls.</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-400 line-through">36.70 $/gr</div>
+                                <div class="text-sm font-bold text-green-400">↘ -6.45 $/gr</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Nonil -->
+                        <div class="flex items-center justify-between p-4 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                                <span class="font-medium text-gray-200">Nonil</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-400 line-through">29.00 $/gr</div>
+                                <div class="text-sm font-bold text-green-400">↘ -4.30 $/gr</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Otros Cambios Importantes -->
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold text-orange-200 mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+                        Otros Cambios Importantes ($1-$5)
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                        
+                        <!-- Cocoamida - REDUCCIÓN -->
+                        <div class="flex items-center justify-between p-3 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span class="text-sm font-medium text-gray-200">Cocoamida</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-gray-500 line-through">33.00</div>
+                                <div class="text-xs font-bold text-green-400">↘ -2.75</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Glicerina - REDUCCIÓN -->
+                        <div class="flex items-center justify-between p-3 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span class="text-sm font-medium text-gray-200">Glicerina</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-gray-500 line-through">12.50</div>
+                                <div class="text-xs font-bold text-green-400">↘ -2.28</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Rosa - AUMENTO -->
+                        <div class="flex items-center justify-between p-3 bg-red-500/10 rounded-xl border border-red-500/20 hover:bg-red-500/15 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                <span class="text-sm font-medium text-gray-200">Frag Rosa</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-gray-500 line-through">70.80</div>
+                                <div class="text-xs font-bold text-red-400">↘ -2.37</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Citronela - AUMENTO -->
+                        <div class="flex items-center justify-between p-3 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span class="text-sm font-medium text-gray-200">Frag Citronela</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-gray-500 line-through">87.50</div>
+                                <div class="text-xs font-bold text-green-400">↘ -2.07</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Frutal - AUMENTO -->
+                        <div class="flex items-center justify-between p-3 bg-red-500/10 rounded-xl border border-red-500/20 hover:bg-red-500/15 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                <span class="text-sm font-medium text-gray-200">Frag Frutal</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-gray-500 line-through">120.80</div>
+                                <div class="text-xs font-bold text-red-400">↗ +2.03</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Brisa Marina - REDUCCIÓN -->
+                        <div class="flex items-center justify-between p-3 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span class="text-sm font-medium text-gray-200">Brisa Marina</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-gray-500 line-through">141.70</div>
+                                <div class="text-xs font-bold text-green-400">↘ -1.87</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Flor De Amoha - REDUCCIÓN -->
+                        <div class="flex items-center justify-between p-3 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span class="text-sm font-medium text-gray-200">Flor Amoha</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-gray-500 line-through">141.70</div>
+                                <div class="text-xs font-bold text-green-400">↘ -1.87</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Rinsol - REDUCCIÓN -->
+                        <div class="flex items-center justify-between p-3 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span class="text-sm font-medium text-gray-200">Rinsol</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-gray-500 line-through">25.00</div>
+                                <div class="text-xs font-bold text-green-400">↘ -1.69</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Producto Agregado -->
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold text-purple-200 mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+                        Producto Agregado
+                    </h4>
+                    <div class="p-4 bg-purple-500/10 rounded-xl border border-purple-500/20">
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+                            <span class="font-medium text-gray-200">Frag Liquid Touch</span>
+                            <span class="text-sm text-purple-400 bg-purple-500/20 px-2 py-1 rounded-full">NUEVO</span>
+                            <span class="text-sm font-bold text-purple-300 ml-auto">119.43 $/gr</span>
                         </div>
                     </div>
-                    
-                    <!-- Fragancia Vainilla - AUMENTO SIGNIFICATIVO -->
-                    <div class="flex items-center justify-between p-4 bg-red-500/10 rounded-xl border border-red-500/20 hover:bg-red-500/15 transition-colors">
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
-                            <span class="font-medium text-gray-200">Frag Vainilla</span>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-sm text-gray-400 line-through">76.93 $/gr</div>
-                            <div class="text-sm font-bold text-red-400">↗ +35.70 $/gr</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Cocoamida - AUMENTO -->
-                    <div class="flex items-center justify-between p-4 bg-red-500/10 rounded-xl border border-red-500/20 hover:bg-red-500/15 transition-colors">
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
-                            <span class="font-medium text-gray-200">Cocoamida</span>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-sm text-gray-400 line-through">22.53 $/gr</div>
-                            <div class="text-sm font-bold text-red-400">↗ +2.21 $/gr</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Glicerina - AUMENTO -->
-                    <div class="flex items-center justify-between p-4 bg-red-500/10 rounded-xl border border-red-500/20 hover:bg-red-500/15 transition-colors">
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
-                            <span class="font-medium text-gray-200">Glicerina</span>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-sm text-gray-400 line-through">8.42 $/gr</div>
-                            <div class="text-sm font-bold text-red-400">↗ +2.31 $/gr</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Procide - REDUCCIÓN -->
-                    <div class="flex items-center justify-between p-4 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                            <span class="font-medium text-gray-200">Procide</span>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-sm text-gray-400 line-through">17.77 $/gr</div>
-                            <div class="text-sm font-bold text-green-400">↘ -0.34 $/gr</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Rinsol - REDUCCIÓN -->
-                    <div class="flex items-center justify-between p-4 bg-green-500/10 rounded-xl border border-green-500/20 hover:bg-green-500/15 transition-colors">
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                            <span class="font-medium text-gray-200">Rinsol</span>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-sm text-gray-400 line-through">21.85 $/gr</div>
-                            <div class="text-sm font-bold text-green-400">↘ -1.87 $/gr</div>
-                        </div>
-                    </div>
-                    
                 </div>
                 
-                <div class="mt-6 p-4 bg-orange-500/10 rounded-xl border border-orange-500/20">
-                    <div class="flex items-center gap-3 text-orange-300">
-                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <span class="text-sm font-medium">Los precios mostrados en la calculadora ya incluyen estos cambios recientes.</span>
+                <!-- Resumen e información -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-orange-500/10 rounded-xl border border-orange-500/20">
+                        <div class="flex items-center gap-3 text-orange-300 mb-2">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-sm font-medium">Los precios mostrados en la calculadora ya incluyen estos cambios recientes.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 bg-blue-500/10 rounded-xl border border-blue-500/20">
+                        <div class="flex items-center gap-3 text-blue-300">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                            <span class="text-sm font-medium">24 productos actualizados • 1 producto agregado</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -172,7 +302,7 @@
             </h1>
             <p class="text-gray-300 text-xl mb-3">Optimiza tus cálculos de fragancias y productos químicos</p>
             <div class="mt-4 text-sm text-purple-300 font-medium bg-purple-500/20 px-4 py-2 rounded-full inline-block border border-purple-500/30">
-                ACTUALIZADA A 23 JULIO 2025
+                ACTUALIZADA A 11 AGOSTO 2025
             </div>
             <div class="w-32 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 mx-auto rounded-full mt-6 shadow-lg shadow-purple-500/50"></div>
         </div>
@@ -442,3 +572,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
